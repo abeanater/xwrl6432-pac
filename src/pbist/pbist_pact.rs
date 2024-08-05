@@ -13,7 +13,7 @@ impl R {
 Pbist Active/ROM Clock Enable Register \\[0\\]: This bit must be set to turn on internal PBIST clocks. Setting this bit asserts an internal signal that is used as the clock gate enable. As long as this bit is 0, any access to PBIST will not go through, and PBIST will remain in an almost zero-power mode. Value 0 = Disable internal PBIST clocks Value 1 = Enable internal PBIST clocks"]
     #[inline(always)]
     pub fn pbist_pact(&self) -> PbistPactR {
-        PbistPactR::new(self.bits)
+        PbistPactR::new(bool(self.bits))
     }
 }
 impl W {

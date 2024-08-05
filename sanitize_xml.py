@@ -83,8 +83,6 @@ if __name__=="__main__":
             field.find('name').text = name_value
         else:
             name_value = field.find('name').text
-            if 'TPTC_B0' == name_value:
-                print(name_value)
     rename_duplicates(root)
 
     with open('xml/iwrl6432_updated.svd', 'wb') as f:

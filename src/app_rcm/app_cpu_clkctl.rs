@@ -1,0 +1,63 @@
+#[doc = "Register `APP_CPU_CLKCTL` reader"]
+pub type R = crate::R<AppCpuClkctlSpec>;
+#[doc = "Register `APP_CPU_CLKCTL` writer"]
+pub type W = crate::W<AppCpuClkctlSpec>;
+#[doc = "Field `srcsel` reader - 15:4\\]
+Select the source clock: 0x0 : OSC_CLK 0x1 : SLOW_CLK 0x2 : MDLL_CLK 0x3 : FAST_CLK 0x4 : SLOW_CLK 0x5 : SLOW_CLK 0x6 : SLOW_CLK 0x7 : SLOW_CLK For other values if the lower 3 bits matches with above, corresponding clock is selected. Data should be loaded as multibit. For example: if Clock source 0x5 should be selected then 0x555 should be configured to the register."]
+pub type SrcselR = crate::FieldReader<u16>;
+#[doc = "Field `srcsel` writer - 15:4\\]
+Select the source clock: 0x0 : OSC_CLK 0x1 : SLOW_CLK 0x2 : MDLL_CLK 0x3 : FAST_CLK 0x4 : SLOW_CLK 0x5 : SLOW_CLK 0x6 : SLOW_CLK 0x7 : SLOW_CLK For other values if the lower 3 bits matches with above, corresponding clock is selected. Data should be loaded as multibit. For example: if Clock source 0x5 should be selected then 0x555 should be configured to the register."]
+pub type SrcselW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
+#[doc = "Field `divr` reader - 27:16\\]
+Divide value 0x0 : div1 0x1 : div2 0x2 : div3 . . 0xF = div16 Data should be loaded as multibit. For example: if divider value of '0x8' should be selected then '0x888' should be configured to the register."]
+pub type DivrR = crate::FieldReader<u16>;
+#[doc = "Field `divr` writer - 27:16\\]
+Divide value 0x0 : div1 0x1 : div2 0x2 : div3 . . 0xF = div16 Data should be loaded as multibit. For example: if divider value of '0x8' should be selected then '0x888' should be configured to the register."]
+pub type DivrW<'a, REG> = crate::FieldWriter<'a, REG, 12, u16>;
+impl R {
+    #[doc = "Bits 4:15 - 15:4\\]
+Select the source clock: 0x0 : OSC_CLK 0x1 : SLOW_CLK 0x2 : MDLL_CLK 0x3 : FAST_CLK 0x4 : SLOW_CLK 0x5 : SLOW_CLK 0x6 : SLOW_CLK 0x7 : SLOW_CLK For other values if the lower 3 bits matches with above, corresponding clock is selected. Data should be loaded as multibit. For example: if Clock source 0x5 should be selected then 0x555 should be configured to the register."]
+    #[inline(always)]
+    pub fn srcsel(&self) -> SrcselR {
+        SrcselR::new(((self.bits >> 4) & 0x0fff) as u16)
+    }
+    #[doc = "Bits 16:27 - 27:16\\]
+Divide value 0x0 : div1 0x1 : div2 0x2 : div3 . . 0xF = div16 Data should be loaded as multibit. For example: if divider value of '0x8' should be selected then '0x888' should be configured to the register."]
+    #[inline(always)]
+    pub fn divr(&self) -> DivrR {
+        DivrR::new(((self.bits >> 16) & 0x0fff) as u16)
+    }
+}
+impl W {
+    #[doc = "Bits 4:15 - 15:4\\]
+Select the source clock: 0x0 : OSC_CLK 0x1 : SLOW_CLK 0x2 : MDLL_CLK 0x3 : FAST_CLK 0x4 : SLOW_CLK 0x5 : SLOW_CLK 0x6 : SLOW_CLK 0x7 : SLOW_CLK For other values if the lower 3 bits matches with above, corresponding clock is selected. Data should be loaded as multibit. For example: if Clock source 0x5 should be selected then 0x555 should be configured to the register."]
+    #[inline(always)]
+    #[must_use]
+    pub fn srcsel(&mut self) -> SrcselW<AppCpuClkctlSpec> {
+        SrcselW::new(self, 4)
+    }
+    #[doc = "Bits 16:27 - 27:16\\]
+Divide value 0x0 : div1 0x1 : div2 0x2 : div3 . . 0xF = div16 Data should be loaded as multibit. For example: if divider value of '0x8' should be selected then '0x888' should be configured to the register."]
+    #[inline(always)]
+    #[must_use]
+    pub fn divr(&mut self) -> DivrW<AppCpuClkctlSpec> {
+        DivrW::new(self, 16)
+    }
+}
+#[doc = "APP_CPU_CLKCTL\n\nYou can [`read`](crate::Reg::read) this register and get [`app_cpu_clkctl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`app_cpu_clkctl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+pub struct AppCpuClkctlSpec;
+impl crate::RegisterSpec for AppCpuClkctlSpec {
+    type Ux = u32;
+}
+#[doc = "`read()` method returns [`app_cpu_clkctl::R`](R) reader structure"]
+impl crate::Readable for AppCpuClkctlSpec {}
+#[doc = "`write(|w| ..)` method takes [`app_cpu_clkctl::W`](W) writer structure"]
+impl crate::Writable for AppCpuClkctlSpec {
+    type Safety = crate::Unsafe;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
+}
+#[doc = "`reset()` method sets APP_CPU_CLKCTL to value 0"]
+impl crate::Resettable for AppCpuClkctlSpec {
+    const RESET_VALUE: u32 = 0;
+}

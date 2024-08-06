@@ -1,10 +1,10 @@
-[package]
-name = "iwrl64xx-pac"
+6[package]
+name = "xwrl64xx-pac"
 version = "0.6.0"
 authors = ["Abram Haich"]
 edition = "2018"
 homepage = "https://github.com/abeanater/xwrl64xx-pac"
-description = "A Peripheral Access Crate for the ti iwrl64xx radar devkit"
+description = "A Peripheral Access Crate for the ti xwrl64xx radar devkit"
 license = "MIT"
 repository = "https://github.com/abeanater/xwrl64xx-pac"
 

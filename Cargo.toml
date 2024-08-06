@@ -1,4 +1,4 @@
-6[package]
+[package]
 name = "xwrl64xx-pac"
 version = "0.6.0"
 authors = ["Abram Haich"]
